@@ -286,7 +286,9 @@ public class Mobile_TC145 {
 	  		// 1개월 탭 'V' 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[2]/ul/li[1]/div/p/span")));			
-		  	System.out.println("1개월 탭 'V' 기다림");			
+		  	System.out.println("1개월 탭 'V' 기다림");	
+		  	
+		  	Thread.sleep(3000);
 
 			// 1개월 탭 'V' text 체크
 			if ("".equals(driver.findElement(By.xpath(".//*[@id='ct']/div[2]/ul/li[1]/div/p/span")).getText())) {
