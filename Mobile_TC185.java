@@ -260,12 +260,11 @@ public class Mobile_TC185 {
 	  		
 	  		// 방송알리미 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[8]/a")));
+	  		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(8) > a")));
 		  	System.out.println("방송알리미 기다림");
 	  		
 			// 방송알리미 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[8]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(8) > a")).click();
 		  	System.out.println("방송알리미 클릭");
 	  		
 	  		// 수신동의 '예' 기다림

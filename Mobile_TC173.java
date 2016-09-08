@@ -261,12 +261,11 @@ public class Mobile_TC173 {
 	  		
 	  		// 쇼핑찜 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[6]/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")));
 		  	System.out.println("쇼핑찜 기다림");
 	  		
 			// 쇼핑찜 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[6]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")).click();
 		  	System.out.println("쇼핑찜 버튼 클릭");
 
 	  		// 저가 탭 기다림

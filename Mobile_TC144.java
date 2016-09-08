@@ -8,6 +8,7 @@ import java.util.Set;
 import org.junit.*;
 import static org.junit.Assert.*;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -259,6 +260,7 @@ public class Mobile_TC144 {
 	  		
 			// 스크롤 다운 (마이존 하단 내역 탐색)
 	  		Thread.sleep(3000);
+	  		
 	  		JavascriptExecutor jse = (JavascriptExecutor)driver;
 	  		jse.executeScript("window.scrollTo(0,400);");
 		  	System.out.println("스크롤 다운 (마이존 하단 내역 탐색)");
@@ -268,9 +270,10 @@ public class Mobile_TC144 {
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[1]/a")));
 		  	System.out.println("주문내역/배송현황 기다림");
 	  		
+		  	Thread.sleep(4000);
+		  	
 			// 주문내역/배송현황  버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[1]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(1) > a")).click();
 		  	System.out.println("주문내역/배송현황 클릭");
 	  		
 	  		// 주문내역/배송현황 타이틀 기다림

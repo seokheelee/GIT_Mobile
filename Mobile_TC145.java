@@ -269,8 +269,7 @@ public class Mobile_TC145 {
 		  	System.out.println("주문내역/배송현황 기다림");
 	  		
 			// 주문내역/배송현황  버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[1]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(1) > a")).click();
 		  	System.out.println("주문내역/배송현황 클릭");
 	  		
 	  		// 1개월 탭 기다림

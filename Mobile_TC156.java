@@ -264,8 +264,7 @@ public class Mobile_TC156 {
 		  	System.out.println("주문취소/교환/반품 기다림");
 	  		
 			// 주문취소/교환/반품 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[2]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(2) > a")).click();
 		  	System.out.println("주문취소/교환/반품 버튼 클릭");
 			
 	  		// 신청내역 조회 탭 기다림

@@ -252,19 +252,19 @@ public class Mobile_TC181 {
 		  		driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/div/a")).click();
 		  	}
 		  	
-		  	// 쇼핑찜 위치로 스크롤 이동
-		  	Point hoverItem = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[6]/a")).getLocation();
-		  	((JavascriptExecutor)driver).executeScript("window.scrollBy(0,"+(hoverItem.getY())+");");
-		  	System.out.println("쇼핑찜 위치로 스크롤 이동");
+			// 스크롤 다운 (마이존 하단 내역 탐색)
+	  		Thread.sleep(3000);
+	  		JavascriptExecutor jse = (JavascriptExecutor)driver;
+	  		jse.executeScript("window.scrollTo(0,400);");
+		  	System.out.println("스크롤 다운 (마이존 하단 내역 탐색)");
 	  		
 	  		// 쇼핑찜 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[6]/a")));
+	  		wait.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")));
 		  	System.out.println("쇼핑찜 기다림");
 	  		
 			// 쇼핑찜 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[6]/a"));
-	  		element.click();
+		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")).click();
 		  	System.out.println("쇼핑찜 버튼 클릭");
 	  	
 		  	
