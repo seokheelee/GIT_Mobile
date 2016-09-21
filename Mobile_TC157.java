@@ -282,6 +282,8 @@ public class Mobile_TC157 {
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[2]/div/p/a")));
 		  	System.out.println("3개월 탭 기다림");
 	  		
+		  	Thread.sleep(3000);
+		  	
 			// 3개월 탭 클릭
 			element = driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[2]/div/p/a"));
 	  		element.click();
