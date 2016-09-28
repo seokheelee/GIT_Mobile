@@ -222,7 +222,7 @@ public class Mobile_TC182 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 			
@@ -273,20 +273,13 @@ public class Mobile_TC182 {
 	  		jse1.executeScript("window.scrollTo(0,400);");
 	  		System.out.println("스크롤 다운1 (마이존 하단 내역 탐색)");
 	  		
-	  		// 계속쇼핑 버튼 기다림
+	  		// 하단 마이존 버튼 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[1]/div/ul/li[2]/p")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='o1h_center']/footer/nav/ul/li[5]/a")));
 		  	System.out.println("계속쇼핑 버튼 기다림");
 
-		  	Thread.sleep(3000);
-	  		JavascriptExecutor jse2 = (JavascriptExecutor)driver;
-	  		jse2.executeScript("window.scrollTo(0,2400);");
-	  		System.out.println("스크롤 다운2 (마이존 하단 내역 탐색)");
-		  	Thread.sleep(3000);
-
-	  		
-			// 계속쇼핑  버튼 클릭
-		  	driver.findElement(By.xpath(".//*[@id='ct']/div[1]/div/ul/li[2]/p")).click();
+			// 하단 마이존  버튼 클릭
+		  	driver.findElement(By.xpath(".//*[@id='o1h_center']/footer/nav/ul/li[5]/a")).click();
 		  	System.out.println("계속쇼핑 버튼 클릭");
 
 	  		// 마이존 기다림

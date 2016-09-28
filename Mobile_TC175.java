@@ -222,7 +222,7 @@ public class Mobile_TC175 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 			
@@ -270,11 +270,11 @@ public class Mobile_TC175 {
 
 	  		// 총~개 text 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[2]/span/strong")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[2]/div/label")));
 		  	System.out.println("총~개 text 기다림");
 	  		
 			// 총~개 text 체크
-			if(driver.findElement(By.xpath(".//*[@id='ct']/form/div[2]/span/strong")).getText().indexOf("개") >=0)
+			if(driver.findElement(By.xpath(".//*[@id='ct']/form/div[2]/div/label")).getText().indexOf("전체선택") >=0)
 			{
 				System.out.println("[TC_175] success");
 				assertTrue(true);

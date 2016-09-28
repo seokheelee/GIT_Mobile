@@ -223,9 +223,8 @@ public class Mobile_TC017 {
 				else {
 				assertTrue(true);
 				}
-  			  	
 
-		  	
+			Thread.sleep(3000);
 
 		  	// 5% 적립신청 클릭
 		  	driver.findElement(By.xpath(".//*[@id='ct']/div/div[6]/ul/li[1]/a")).click(); 

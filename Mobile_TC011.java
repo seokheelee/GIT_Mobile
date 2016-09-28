@@ -225,7 +225,7 @@ public class Mobile_TC011 {
 		    element = driver.findElement(By.xpath(".//*[@id='pwd']"));
 		    element.sendKeys(passwd);
 		    
-		    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+		    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 		    element.click();
 			System.out.println("로그인 버튼 클릭");
 

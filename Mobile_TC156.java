@@ -222,7 +222,7 @@ public class Mobile_TC156 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 			

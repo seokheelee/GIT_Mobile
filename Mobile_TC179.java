@@ -222,7 +222,7 @@ public class Mobile_TC179 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 			
@@ -270,21 +270,22 @@ public class Mobile_TC179 {
 
 	  		// 전체선택 버튼  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='checkAllText']/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[2]/div/label")));
 		  	System.out.println("전체선택 버튼 기다림");
 			
 			// 전체선택   버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='checkAllText']/a"));
+			element = driver.findElement(By.xpath(".//*[@id='ct']/form/div[2]/div/label"));
 	  		element.click();
 		  	System.out.println("전체선택 버튼 클릭");			
 
-	  		// 전체해제 버튼  기다림
+	  		// 전체선택 버튼  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='checkAllText']/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[2]/div/label")));
 		  	System.out.println("전체해제 버튼 기다림");						
 	  		
-			// 전체해제 text 체크
-			if ("전체해제".equals(driver.findElement(By.xpath(".//*[@id='checkAllText']/a")).getText())) {
+			// 전체선택 text 체크
+		  	if(driver.findElement(By.xpath(".//*[@id='ct']/form/div[2]/div/label")).getText().indexOf("전체선택") >=0) 
+			{
 				System.out.println("[TC_179] success");
 				assertTrue(true);
 				return;

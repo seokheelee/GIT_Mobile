@@ -199,7 +199,7 @@ public class Mobile_Test_01 {
 	    element = driver.findElement(By.xpath(".//*[@id='pwd']"));
 	    element.sendKeys(passwd);
 	    
-	    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+	    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	    element.click();
 	   
 	    

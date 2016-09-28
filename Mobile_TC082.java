@@ -218,7 +218,7 @@ public class Mobile_TC082 {
 		  	System.out.println("잘못된 아이디 / 패스워드 입력");
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 	  		Thread.sleep(3000);

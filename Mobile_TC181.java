@@ -222,7 +222,7 @@ public class Mobile_TC181 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[3]"));
+			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
 	  		element.click();
 		  	System.out.println("로그인 버튼 클릭");
 			
@@ -270,7 +270,7 @@ public class Mobile_TC181 {
 		  	
 	  		// 전체선택 버튼  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='checkAllText']/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[2]/div/label")));
 		  	System.out.println("전체선택 버튼 기다림");
 	  		
 			// 스크롤 다운 (마이존 하단 내역 탐색)
@@ -281,11 +281,11 @@ public class Mobile_TC181 {
 	  		
 	  		// 선택삭제 버튼  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[1]/div/ul/li[1]/p/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[1]/ul/li[1]/span/a")));
 		  	System.out.println("선택삭제 버튼  기다림");
 	  			  		
 			// 선택삭제 Text 체크
-			if ("선택삭제".equals(driver.findElement(By.xpath(".//*[@id='ct']/div[1]/div/ul/li[1]/p/a")).getText())) {
+			if ("선택삭제".equals(driver.findElement(By.xpath(".//*[@id='ct']/div[1]/ul/li[1]/span/a")).getText())) {
 				System.out.println("[TC_181] success");
 				assertTrue(true);
 				return;
