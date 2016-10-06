@@ -267,6 +267,8 @@ public class Mobile_TC172 {
 			// 쇼핑찜 버튼 클릭
 		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")).click();
 		  	System.out.println("쇼핑찜 버튼 클릭");
+		  	
+		  	Thread.sleep(3000);
 
 	  		// 고가 탭 기다림
 	  		wait = new WebDriverWait(driver, waitTime);

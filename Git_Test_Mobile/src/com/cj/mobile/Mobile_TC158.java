@@ -278,6 +278,7 @@ public class Mobile_TC158 {
 	  		element.click();
 		  	System.out.println("신청내역 조회 탭 버튼 클릭");
 	  		
+		  	
 	  		// 6개월 탭  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[3]/div/p/a")));
@@ -288,6 +289,8 @@ public class Mobile_TC158 {
 	  		element.click();
 		  	System.out.println("6개월 탭 클릭");
 	  		
+		  	Thread.sleep(3000);
+		  	
 	  		// 6개월 탭 'V' 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[3]/div/p/span")));			

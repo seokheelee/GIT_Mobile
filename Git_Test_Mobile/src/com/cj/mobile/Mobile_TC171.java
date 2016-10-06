@@ -267,6 +267,8 @@ public class Mobile_TC171 {
 		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")).click();
 		  	System.out.println("쇼핑찜 버튼 클릭");
 
+		  	Thread.sleep(3000);
+		  	
 	  		// 최근등록 탭 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/form/div[1]/ul/li[1]/div/p/a")));

@@ -268,6 +268,8 @@ public class Mobile_TC177 {
 		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(6) > a")).click();
 		  	System.out.println("쇼핑찜 버튼 클릭");
 
+		  	Thread.sleep(3000);
+		  	
 	  		// 삭제 버튼 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='jjimList']/li[1]/div[2]/div[1]/p/a")));
