@@ -201,14 +201,14 @@ public class Mobile_TC051 {
 			Thread.sleep(10000);
 			
 
-			// 생방송 ONAIR 객체 체크
-			boolean isExist4 = existElement(driver, By.xpath(".//*[@id='tvLive']/div[3]/div/div[1]/span[1]"), ""); // ONAIR
-			if(isExist4){
+			// 00:00:00 남음 text 체크
+			boolean isExist2 = existElement(driver, By.xpath(".//*[@id='tvLive']/div[3]/div/div[1]/span[2]"), ""); // ONAIR
+			if(isExist2){
 				
-				// 생방송 ONAIR 객체 기다림.
+				// 00:00:00 남음 text 기다림.
 				wait = new WebDriverWait(driver, waitTime);
-				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='tvLive']/div[3]/div/div[1]/span[1]")));
-				System.out.println("생방송 ONAIR 객체 기다림");
+				wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='tvLive']/div[3]/div/div[1]/span[2]")));
+				System.out.println("00:00:00 남음 text 기다림");
 				Thread.sleep(5000);
 				
 //				((JavascriptExecutor)driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(By.xpath(".//*[@id='tvLive']/div[3]/div/a/div[1]/img")));
