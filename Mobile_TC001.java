@@ -14,7 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.cj.util.SmartProperties;
 
-//테스트 입니다.
+
 
 /**
  * 
@@ -77,8 +77,6 @@ public class Mobile_TC001 {
 					DesiredCapabilities caps = new DesiredCapabilities();
 					caps = DesiredCapabilities. android ();
 					
-					
-					//caps.setCapability(MobileCapabilityType.DEVICE_NAME , "LG-F160S-cdd1fa" );
 					caps.setCapability(MobileCapabilityType.DEVICE_NAME , "LGF460S859d639d" ); //device name은 큰 의미없음. LG폰도 이 옵션으로 수행됨
 					caps.setCapability(MobileCapabilityType.PLATFORM_NAME , MobilePlatform. ANDROID );
 					caps.setCapability(MobileCapabilityType.BROWSER_NAME , "Chrome" );
@@ -88,12 +86,6 @@ public class Mobile_TC001 {
 					System.out.println("Start driver.");
 					driver = new AndroidDriver<WebElement>( appiumUrl , caps );
 				
-				
-					/*
-					driver = new FirefoxDriver();
-				    baseUrl = "http://mw.cjmall.com";
-				    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-				    */
 				}catch(Exception e1)
 				{{
 					try
@@ -102,8 +94,6 @@ public class Mobile_TC001 {
 						DesiredCapabilities caps = new DesiredCapabilities();
 						caps = DesiredCapabilities. android ();
 						
-						
-						//caps.setCapability(MobileCapabilityType.DEVICE_NAME , "LG-F160S-cdd1fa" );
 						caps.setCapability(MobileCapabilityType.DEVICE_NAME , "LGF460S859d639d" ); //device name은 큰 의미없음. LG폰도 이 옵션으로 수행됨
 						caps.setCapability(MobileCapabilityType.PLATFORM_NAME , MobilePlatform. ANDROID );
 						caps.setCapability(MobileCapabilityType.BROWSER_NAME , "Chrome" );
@@ -113,12 +103,6 @@ public class Mobile_TC001 {
 						System.out.println("Start driver.");
 						driver = new AndroidDriver<WebElement>( appiumUrl , caps );
 					
-					
-						/*
-						driver = new FirefoxDriver();
-					    baseUrl = "http://mw.cjmall.com";
-					    driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-					    */
 					}catch(Exception e2)
 					{
 						System.out.println("Session Creation failed.");
