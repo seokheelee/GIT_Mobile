@@ -225,7 +225,18 @@ public class Mobile_TC050 {
 			else {
 				assertTrue(true);
 				}
+			
+			if(driver.findElement(By.xpath(".//*[@id='tvLive']/div[3]/div/ul/li/a")).getText().indexOf("상담신청") >=0)
+			{
+				System.out.println("상담신청 상품");
+				assertTrue(true);
+				return;
+			}
 		  	
+			else {
+				System.out.println("상담신청 상품 아님 계속 진행");
+				}
+			
 	  		// 상품가격 ~원 text 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='tvLive']/div[3]/div/a/div[2]/span[2]/em")));
