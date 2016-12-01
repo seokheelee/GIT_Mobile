@@ -17,12 +17,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_071
  * Scenario : 전시 > 로그인 > 로그인 페이지 이동
  * Assertion :  "로그인" Text 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC071 {
@@ -185,8 +187,7 @@ public class Mobile_TC071 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 						
 			// 좌측 카테고리 기다림.

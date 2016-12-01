@@ -17,12 +17,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_069
  * Scenario : 전시 > 하단 '최근본상품' 버튼
  * Assertion :  "최근본상품" Text 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC069 {
@@ -185,8 +187,7 @@ public class Mobile_TC069 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 						
 			// 하단 '최근 본 상품' 버튼 기다림.

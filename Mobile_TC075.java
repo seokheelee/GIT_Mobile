@@ -17,12 +17,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_075
  * Scenario : 전시 > 상단메뉴 > 로그인 > 회원가입 > CJ ONE 회원가입
  * Assertion : 회원가입 Text 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC075 {
@@ -185,8 +187,7 @@ public class Mobile_TC075 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 
 			// 상단카테고리 버튼 기다림.
@@ -195,8 +196,7 @@ public class Mobile_TC075 {
 		  	System.out.println("상단카테고리 버튼 기다림");
 			
 			// 상단카테고리 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a"));
-	  		element.click();
+			driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")).click();
 		  	System.out.println("상단카테고리 버튼 클릭");
 			
 	  		// 로그인 버튼 기다림.
@@ -205,8 +205,7 @@ public class Mobile_TC075 {
 		  	System.out.println("로그인 버튼 기다림");
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='wrapper_cate_left']/dl/dt/a"));
-	  		element.click();
+			driver.findElement(By.xpath(".//*[@id='wrapper_cate_left']/dl/dt/a")).click();
 		  	System.out.println("로그인 버튼 클릭");
 	  		
 	  		// 회원가입 버튼 기다림.
@@ -215,8 +214,7 @@ public class Mobile_TC075 {
 		  	System.out.println("회원가입 버튼 기다림");
 
 	  		// 회원가입 버튼 클릭			
-			element = driver.findElement(By.xpath(".//*[@id='memberArea']/div[2]/ul[1]/li[3]/a"));
-	  		element.click();
+			driver.findElement(By.xpath(".//*[@id='memberArea']/div[2]/ul[1]/li[3]/a")).click();
 		  	System.out.println("회원가입 버튼 클릭");
 
 			// 회원가입 창 이동	  				
