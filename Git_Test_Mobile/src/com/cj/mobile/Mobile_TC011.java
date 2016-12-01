@@ -17,12 +17,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_011
  * Scenario : 전시 > 오클락 딜 > 방송상품 > 혜택 노출 
  * Assertion : XPath Text 'null' 여부 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC011 {
@@ -187,46 +189,36 @@ public class Mobile_TC011 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 			
-			////
-			//// 1. 사이드 메뉴 기다림.
+			// 사이드 메뉴 기다림.
 			wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")));
 			System.out.println("사이드 메뉴 기다림");	
 			
-			//// 사이드 메뉴 클릭
-		    element = driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a"));
-		    element.click();
+			// 사이드 메뉴 클릭
+		    driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")).click();
 			System.out.println("사이드 메뉴 클릭");		    		    
 		    
-		    ////
-		  	//// 2. 로그인 화면 기다림.
+		  	// 로그인 화면 기다림.
 		  	wait = new WebDriverWait(driver, waitTime);
 		  	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='wrapper_cate_left']/dl/dt/a")));
 			System.out.println("로그인 화면 기다림");
 		  	
-			//// 로그인 버튼 클릭
-		    element = driver.findElement(By.xpath(".//*[@id='wrapper_cate_left']/dl/dt/a"));
-		    element.click();
+			// 로그인 버튼 클릭
+		    driver.findElement(By.xpath(".//*[@id='wrapper_cate_left']/dl/dt/a")).click();
 			System.out.println("로그인 버튼 클릭");
 		    
-		    ////
-		  	//// 2-1. ID 객체 기다림.
+		  	// ID 객체 기다림.
 		  	wait = new WebDriverWait(driver, waitTime);
 		  	wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='member_id']")));
 			System.out.println("ID 객체 기다림");
 		  	 
-		    element = driver.findElement(By.xpath(".//*[@id='member_id']"));
-		    element.sendKeys(userId);
+		    driver.findElement(By.xpath(".//*[@id='member_id']")).sendKeys(userId);
+		    driver.findElement(By.xpath(".//*[@id='pwd']")).sendKeys(passwd);
 		    
-		    element = driver.findElement(By.xpath(".//*[@id='pwd']"));
-		    element.sendKeys(passwd);
-		    
-		    element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
-		    element.click();
+		    driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]")).click();
 			System.out.println("로그인 버튼 클릭");
 
 			// 오클락딜 버튼 기다림.

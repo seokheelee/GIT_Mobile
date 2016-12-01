@@ -17,12 +17,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_082
  * Scenario : 전시 > 로그인 > 잘못된 아이디 / 패스워드 입력
  * Assertion :  "아이디나 비밀번호가 틀립니다. 다시 한번 확인해 주세요." alert Text 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC082 {
@@ -185,8 +187,7 @@ public class Mobile_TC082 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 						
 			// 좌측 카테고리 기다림.
@@ -218,10 +219,10 @@ public class Mobile_TC082 {
 		  	System.out.println("잘못된 아이디 / 패스워드 입력");
 			
 			// 로그인 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]"));
-	  		element.click();
-		  	System.out.println("로그인 버튼 클릭");
+			driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]")).click();
+			System.out.println("로그인 버튼 클릭");
 	  		Thread.sleep(3000);
+
 	  		// Alert text 체크
 			if ("아이디나 비밀번호가 틀립니다. 다시 한번 확인해 주세요.".equals(driver.switchTo().alert().getText())) {
 				System.out.println("[TC_082] success");
@@ -231,12 +232,7 @@ public class Mobile_TC082 {
 		    	System.out.println("[TC_082] failure : 'Alert Text' 불일치");
 				assertTrue(false);
 			}
-
-	        
-	        
-
 		} 
-		
 		catch (Exception e) 
 		{
 			e.printStackTrace();

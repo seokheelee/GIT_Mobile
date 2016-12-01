@@ -19,12 +19,14 @@ import com.cj.util.SmartProperties;
 /**
  * 
  * @author SeokheeLee 
- * Date : 2016-06-16
+ * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_006
  * Scenario : 전시 > 상단메뉴 > 상단 카테고리 > 퍼스트룩 클릭 시 해당 카테고리 페이지로 이동
  * Assertion : 브라우저 Title "퍼스트룩" 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
+ * update : Click 이벤트 변경 (2016-11-28)
+ * 
  */
 
 public class Mobile_TC006 {
@@ -187,8 +189,7 @@ public class Mobile_TC006 {
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
-				element = driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"));
-				element.click();
+				driver.findElement(By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]")).click();
 			}
 
 			// 상단카테고리 버튼 기다림.
@@ -197,8 +198,7 @@ public class Mobile_TC006 {
 			System.out.println("상단카테고리 버튼 기다림");
 			
 			// 상단카테고리 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a"));
-	  		element.click();
+			driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")).click();
 	  		System.out.println("상단카테고리 버튼 클릭");
 	  		
 	  		// 퍼스트룩 버튼 기다림.
@@ -207,8 +207,7 @@ public class Mobile_TC006 {
 			System.out.println("퍼스트룩 버튼 기다림");
 			
 			// 퍼스트룩 버튼 클릭
-			element = driver.findElement(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[3]/a"));
-	  		element.click();
+			driver.findElement(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[3]/a")).click();
 	  		System.out.println("퍼스트룩 버튼 클릭");
 	  		
 	  		// 퍼스트룩 페이지 LOGO 기다림.
