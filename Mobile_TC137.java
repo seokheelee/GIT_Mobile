@@ -184,6 +184,7 @@ public class Mobile_TC137 {
 
 			}
 
+			Thread.sleep(3000);
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
@@ -221,7 +222,7 @@ public class Mobile_TC137 {
 			driver.findElement(By.id("pwd")).sendKeys(passwd);
 			
 			// 로그인 버튼 클릭
-			driver.findElement(By.xpath(".//*[@id='loginForm']/input[4]")).click();
+			driver.findElement(By.xpath(".//*[@id='loginForm']/input[5]")).click();
 		  	System.out.println("로그인 버튼 클릭");
 			
 	  		// 마이존 버튼  기다림
