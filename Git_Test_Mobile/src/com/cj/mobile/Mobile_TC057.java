@@ -184,6 +184,7 @@ public class Mobile_TC057 {
 
 			}
 
+			Thread.sleep(3000);
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
@@ -192,11 +193,11 @@ public class Mobile_TC057 {
 			
 			// TV쇼핑 버튼 기다림.
 			wait = new WebDriverWait(driver, waitTime);
-			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='headerMenu']/ul/li[2]/a")));
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='headerMenu']/ul/li[1]/a")));
 		  	System.out.println("TV쇼핑 버튼 기다림");
 			
 			 // TV 쇼핑 버튼 클릭
-			driver.findElement(By.xpath(".//*[@id='headerMenu']/ul/li[2]/a")).click();
+			driver.findElement(By.xpath(".//*[@id='headerMenu']/ul/li[1]/a")).click();
 		  	System.out.println("TV쇼핑 버튼 클릭");
 		  	Thread.sleep(5000);
 

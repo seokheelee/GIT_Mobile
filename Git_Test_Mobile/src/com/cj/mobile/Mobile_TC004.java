@@ -22,10 +22,11 @@ import com.cj.util.SmartProperties;
  * Date : 2016-11-28
  * Subject : CJ Mall 
  * Name : TC_004
- * Scenario : 전시 > 상단메뉴 > 상단 카테고리 > CJ온마트 클릭 시 해당 카테고리 페이지로 이동
- * Assertion : 브라우저 Title "CJ온마트" 체크
+ * Scenario : 전시 > 상단메뉴 > 상단 카테고리 > 오투어 클릭 시 해당 카테고리 페이지로 이동
+ * Assertion : 브라우저 Title "오투어 모바일" 체크
  * update : ScreenRecorder 기능 제거 (2016-06-16)
  * update : Click 이벤트 변경 (2016-11-28)
+ * upadta : CJ 온마트 -> 오투어 모바일 변경 (2016-12-27)
  * 
  */
 
@@ -139,7 +140,7 @@ public class Mobile_TC004 {
 	}
 	
 	@Test
-	public void CJOnmartView() throws Exception {
+	public void OTourView() throws Exception {
 
 		boolean isExist = false;
 		WebDriverWait wait = null;
@@ -186,6 +187,7 @@ public class Mobile_TC004 {
 
 			}
 
+			Thread.sleep(3000);
 			// 팝업창이 존재하면... 팝업창이 떠도 위와 같이 1로 리턴하는 경우가 있음.
 			isExist = existElement(driver, By.xpath(".//*[@id='ct']/div/div[1]/div/div/div/a[1]"), "팝업창");
 			if (isExist) {
@@ -201,18 +203,18 @@ public class Mobile_TC004 {
 			driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")).click();
 			System.out.println("상단카테고리 버튼 클릭");			
 	  	
-	  		// CJONmart 버튼 기다림.
+	  		// 오투어 모바일 버튼 기다림.
 			wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[1]/a")));
-			System.out.println("CJONmart 버튼 기다림");	
+			System.out.println("오투어 모바일 버튼 기다림");	
 			
-			// CJONmart 버튼 클릭
+			// 오투어 모바일 버튼 클릭
 			driver.findElement(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[1]/a")).click();
-	  		System.out.println("CJONmart 버튼 클릭");
+	  		System.out.println("오투어 모바일 버튼 클릭");
 	  		
-	  		// CJONmart 페이지 LOGO 기다림.
+	  		// 오투어 모바일 페이지 LOGO 기다림.
 		    for(int i = 0; i<100; i++){
-		    	if(driver.getTitle().equals("CJ온마트")){
+		    	if(driver.getTitle().equals("오투어 모바일")){
 		    		break;
 		    	} else if (i < 100) {
 		    		Set<String> allWindows2 = driver.getWindowHandles();
@@ -225,14 +227,14 @@ public class Mobile_TC004 {
 				}
 		    }
 			
-		    // 브라우저 Title "CJ온마트" 체크
-			boolean isExist2 = existElement(driver, By.xpath(".//*[@id='header']/div/h1/a/img"), "cj onmart");
-		    if(isExist2 && driver.getTitle().equals("CJ 온마트")){
+		    // 브라우저 Title "오투어 모바일" 체크
+			boolean isExist2 = existElement(driver, By.xpath(".//*[@id='wrap']/header/div[1]/h1"), "로고");
+		    if(isExist2 && driver.getTitle().equals("오투어 모바일")){
 		    	System.out.println("[TC_004] success");
 				assertTrue(true);
 				return;
 		    } else {
-		    	System.out.println("[TC_004] failure : 브라우저 Title 'CJ온마트' 불일치");
+		    	System.out.println("[TC_004] failure : 브라우저 Title '오투어 모바일' 불일치");
 				assertTrue(false);
 			}
 		} catch (Exception e) {
