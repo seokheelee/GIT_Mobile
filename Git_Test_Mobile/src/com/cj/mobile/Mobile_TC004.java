@@ -203,38 +203,33 @@ public class Mobile_TC004 {
 			driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/dl/dt/a")).click();
 			System.out.println("상단카테고리 버튼 클릭");			
 	  	
-	  		// 오투어 모바일 버튼 기다림.
+	  		// 오투어 버튼 기다림.
 			wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[1]/a")));
-			System.out.println("오투어 모바일 버튼 기다림");	
+			System.out.println("오투어 버튼 기다림");	
 			
-			// 오투어 모바일 버튼 클릭
+			// 오투어 버튼 클릭
 			driver.findElement(By.xpath(".//*[@id='view']/div/div/div[2]/ul/li[1]/a")).click();
-	  		System.out.println("오투어 모바일 버튼 클릭");
+	  		System.out.println("오투어 버튼 클릭");
 	  		
-	  		// 오투어 모바일 페이지 LOGO 기다림.
-		    for(int i = 0; i<100; i++){
-		    	if(driver.getTitle().equals("오투어 모바일")){
-		    		break;
-		    	} else if (i < 100) {
-		    		Set<String> allWindows2 = driver.getWindowHandles();
-				    for(String curWindow2 : allWindows2){
-				        driver.switchTo().window(curWindow2);
-				    }
-				} else {
-					System.out.println("[TC_004] failure : Time out");
-					assertTrue(false);
-				}
-		    }
+	  		Thread.sleep(5000);
+	  		// 오투어 페이지 LOGO 기다림.
+	  		Set<String> allWindows2 = driver.getWindowHandles();
+	  		for(String curWindow2 : allWindows2){
+	  			driver.switchTo().window(curWindow2);}
+	  		
+	  		Thread.sleep(5000);
+	  		
+	  		System.out.println(driver.getTitle());
 			
 		    // 브라우저 Title "오투어 모바일" 체크
 			boolean isExist2 = existElement(driver, By.xpath(".//*[@id='wrap']/header/div[1]/h1"), "로고");
-		    if(isExist2 && driver.getTitle().equals("오투어 모바일")){
+		    if(isExist2 && driver.getTitle().equals("오투어")){
 		    	System.out.println("[TC_004] success");
 				assertTrue(true);
 				return;
 		    } else {
-		    	System.out.println("[TC_004] failure : 브라우저 Title '오투어 모바일' 불일치");
+		    	System.out.println("[TC_004] failure : 브라우저 Title '오투어' 불일치");
 				assertTrue(false);
 			}
 		} catch (Exception e) {
