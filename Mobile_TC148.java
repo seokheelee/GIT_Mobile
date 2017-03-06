@@ -270,14 +270,29 @@ public class Mobile_TC148 {
 			// 주문내역/배송현황  버튼 클릭
 		  	driver.findElement(By.cssSelector("#ct > div.myzoneMenuListWrap > ul > li:nth-child(1) > a")).click();
 		  	System.out.println("주문내역/배송현황 클릭");
+
+		  	Thread.sleep(3000);
+
+	  		// 3개월  탭 기다림
+	  		wait = new WebDriverWait(driver, waitTime);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[2]/ul/li[2]/div/p/a")));
+		  	System.out.println("3개월 탭  기다림");
 	  		
+		  	Thread.sleep(3000);
+		  	
+			// 3개월 탭 클릭
+			driver.findElement(By.xpath(".//*[@id='ct']/div[2]/ul/li[2]/div/p/a")).click();
+		  	System.out.println("3개월 탭 클릭");
+	  		
+		  	Thread.sleep(3000);
+		  	
 	  		// 12개월  탭 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[2]/ul/li[4]/div/p/a")));
 		  	System.out.println("12개월 탭  기다림");
 
 		  	Thread.sleep(3000);
-
+		  	
 			// 12개월 탭 클릭
 			driver.findElement(By.xpath(".//*[@id='ct']/div[2]/ul/li[4]/div/p/a")).click();
 		  	System.out.println("12개월 탭 클릭");
@@ -295,7 +310,7 @@ public class Mobile_TC148 {
 				assertTrue(true);
 				return;
 			} else {
-		    	System.out.println("[TC_148] failure : '6개월' 불일치");
+		    	System.out.println("[TC_148] failure : '12개월' 불일치");
 				assertTrue(false);
 			}
 
