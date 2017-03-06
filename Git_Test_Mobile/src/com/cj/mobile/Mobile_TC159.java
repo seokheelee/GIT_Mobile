@@ -251,6 +251,7 @@ public class Mobile_TC159 {
 		  		driver.findElement(By.xpath(".//*[@id='o1h_header_wrap']/div/a")).click();
 		  	}
 
+			
 			// 스크롤 다운 (마이존 하단 내역 탐색)
 	  		Thread.sleep(3000);
 	  		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -275,15 +276,32 @@ public class Mobile_TC159 {
 			driver.findElement(By.xpath(".//*[@id='ct']/div[2]/div/div/div[2]/p/a")).click();
 		  	System.out.println("신청내역 조회 탭 버튼 클릭");
 	  		
+	  		// 3개월 탭  기다림
+	  		wait = new WebDriverWait(driver, waitTime);
+			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[2]/div/p/a")));
+		  	System.out.println("3개월 탭 기다림");
+	  		
+		  	Thread.sleep(3000);
+		  	
+			// 3개월 탭 클릭
+			driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[2]/div/p/a")).click();
+		  	System.out.println("3개월 탭 클릭");
+		  	
+		  	Thread.sleep(3000);
+		  	
 	  		// 12개월 탭  기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[4]/div/p/a")));
 		  	System.out.println("12개월 탭 기다림");
 	  		
+		  	Thread.sleep(3000);
+		  	
 			// 12개월 탭 클릭
 			driver.findElement(By.xpath(".//*[@id='ct']/div[3]/ul/li[4]/div/p/a")).click();
 		  	System.out.println("12개월 탭 클릭");
 	  		
+		  	Thread.sleep(3000);
+		  	
 	  		// 12개월 탭 'V' 기다림
 	  		wait = new WebDriverWait(driver, waitTime);
 			wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(".//*[@id='ct']/div[3]/ul/li[4]/div/p/span")));			
